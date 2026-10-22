@@ -150,3 +150,56 @@ html { scroll-padding-top: 104px; }
   main { padding-top: 72px; }
   html { scroll-padding-top: 88px; }
 }
+
+/* Let the mobile layout follow the full width provided by its browser canvas. */
+@media (max-width: 680px) {
+  html, body, #root, main {
+    width: 100vw !important;
+    max-width: none;
+    min-width: 100vw;
+  }
+  html, body { overflow-x: clip; }
+  #root { min-height: 100vh; }
+  .site-header {
+    left: 16px;
+    transform: none;
+    width: calc(100vw - 32px);
+  }
+  .section-shell {
+    width: 100vw;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 16px;
+  }
+  .section-divider { width: 100vw; }
+  .hero { width: 100vw; }
+}
+
+@media (max-width: 350px) {
+  .site-header { left: 13px; width: calc(100vw - 26px); }
+  .section-shell { padding-inline: 13px; }
+}
+
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+#root, main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+html, body {
+  background-color: var(--bg);
+}
+body::before {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+:root, html, body, #root, main {
+  background: #090b0a !important;
+}
+body::before, .ambient {
+  display: none !important;
+}
