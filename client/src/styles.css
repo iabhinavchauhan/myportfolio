@@ -101,3 +101,34 @@
   .section-heading h2 { font-size: 30px; }
   .floating-contact { padding: 10px; }
 }
+
+/* Navigation call to action and site scrollbar colors. */
+html {
+  scrollbar-color: var(--green-dark) var(--bg);
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track { background: var(--bg); }
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--green), var(--green-dark));
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover { background: #d0ffac; }
+
+.nav-links .nav-contact {
+  border: 1px solid var(--green);
+  transition: color .22s ease, background .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease;
+}
+.nav-links .nav-contact svg { transition: transform .22s ease; }
+.nav-links .nav-contact:hover,
+.nav-links .nav-contact:focus-visible {
+  color: var(--green);
+  background: rgba(184, 255, 120, .08);
+  border-color: var(--green);
+  box-shadow: 0 0 22px rgba(184, 255, 120, .15);
+  transform: translateY(-2px);
+}
+.nav-links .nav-contact:hover svg,
+.nav-links .nav-contact:focus-visible svg { transform: translate(2px, -2px); }
