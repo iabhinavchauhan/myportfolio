@@ -7,10 +7,15 @@ import { errorHandler, notFound } from './middleware/errorHandler.js';
 const app = express();
 app.disable('x-powered-by');
 app.use(helmet());
-const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173').split(',').map(origin => origin.trim()).filter(Boolean);
+const normalizeOrigin = origin => origin.trim().replace(/\/+$/, '');
+const allowedOrigins = new Set([
+  'http://localhost:5173',
+  'https://abhinavchauhan.pages.dev',
+  ...(process.env.FRONTEND_URL || '').split(',').filter(Boolean)
+].map(normalizeOrigin));
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin || allowedOrigins.has(normalizeOrigin(origin))) return callback(null, true);
     return callback(new Error('Origin is not allowed by CORS.'));
   },
   methods: ['GET', 'POST', 'OPTIONS'],
