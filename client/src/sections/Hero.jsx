@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDownRight, ArrowUpRight, Download, Github, Linkedin } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Code2, Download, Github, Linkedin } from 'lucide-react';
 import Orb from '../components/Orb';
 import { profile } from '../data/portfolio';
 
@@ -18,7 +18,7 @@ export default function Hero() {
         <a className="button button-secondary" href="/resume/Abhinav-Chauhan-Resume.pdf" download>Download resume <Download size={16} /></a>
       </motion.div>
       <motion.div className="hero-socials" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
-        <a href={profile.github} target="_blank" rel="noreferrer"><Github size={16} /> GitHub</a><a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a><a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.github} target="_blank" rel="noreferrer"><Github size={16} /> GitHub</a><a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a><a href={profile.leetcode} target="_blank" rel="noreferrer"><Code2 size={16} /> LeetCode</a><a href={`mailto:${profile.email}`}>{profile.email}</a>
       </motion.div>
     </div>
     <motion.div className="hero-art" initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.25 }}>

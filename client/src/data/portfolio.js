@@ -5,6 +5,7 @@ export const profile = {
   email: 'iabhinavchauhan.ac@gmail.com',
   linkedin: 'https://www.linkedin.com/in/iabhinavchauhan',
   github: 'https://github.com/iabhinavchauhan',
+  leetcode: 'https://leetcode.com/u/iabhinavchauhan/',
   portfolio: 'https://abhinavchauhan.pages.dev',
   title: 'Full-Stack Developer',
   summary: 'Results-driven Computer Science Engineering graduate and Full-Stack Developer specializing in the MERN stack. Delivered 5+ production-grade web applications and improved development efficiency by up to 30% through AI-assisted engineering workflows. Proven track record of shipping scalable, maintainable code in fast-paced, remote individual-contributor roles.'
