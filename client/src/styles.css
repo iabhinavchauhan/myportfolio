@@ -132,3 +132,21 @@ html::-webkit-scrollbar-thumb:hover { background: #d0ffac; }
 }
 .nav-links .nav-contact:hover svg,
 .nav-links .nav-contact:focus-visible svg { transform: translate(2px, -2px); }
+
+/* Keep the navigation available while preserving the original page offset. */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(9, 11, 10, .88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+main { padding-top: 88px; }
+html { scroll-padding-top: 104px; }
+
+@media (max-width: 680px) {
+  main { padding-top: 72px; }
+  html { scroll-padding-top: 88px; }
+}
